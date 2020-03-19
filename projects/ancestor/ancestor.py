@@ -14,9 +14,7 @@ def earliest_ancestor(ancestors, starting_node):
     q.enqueue([starting_node, distance])
 
     while q.size() > 0:
-        anc_set = q.dequeue()
-        person = anc_set[0]
-        curr_distance = anc_set[1]
+        person, curr_distance = q.dequeue()
 
         if curr_distance in distances:
             distances[curr_distance].append(person)
